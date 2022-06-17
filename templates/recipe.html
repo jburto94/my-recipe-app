@@ -17,7 +17,7 @@
           {% if session.user_id %}
             {% if saved %}
               <form action="/remove-recipe" method="post">
-                <button class='btn btn-danger text-white' name='remove-recipe' value='{{ recipe["id"] }}'>Remove Recipe</button>
+                <button class='btn btn-danger text-white' name='remove-recipe' value='{{ recipe["id"] }}'>Unsave Recipe</button>
               </form>
             {% else %}
               <form action="/save-recipe" method="post">
@@ -44,7 +44,7 @@
   {% if session.user_id %}
     {% if saved %}
       <form action="/remove-recipe" method="post">
-        <button class='btn btn-danger text-white' name='remove-recipe' value='{{ recipe["id"] }}'>Remove Recipe</button>
+        <button class='btn btn-danger text-white' name='remove-recipe' value='{{ recipe["id"] }}'>Unsave Recipe</button>
       </form>
     {% else %}
       <form action="/save-recipe" method="post">
