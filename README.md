@@ -3,5 +3,4 @@ Application to search and save recipes. Allows user's to register and keep track
 https://my-recipe-app-94.herokuapp.com/
 
 # TODO:
-- Possible stylistic changes
-- Add more details to README
+- Add more details/pictures to README
