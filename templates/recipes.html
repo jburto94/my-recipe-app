@@ -1,0 +1,16 @@
+{% extends 'template.html' %}
+{% block title %} Recipes searcher {% endblock %}
+{% block body %}
+<div class="container">
+  <h2 class='text-center py-5'>Recipes for you:</h2>
+  <div class="row justify-content-center">
+    {% for recipe in recipes %}
+      <div class="col-md-4 mb-4">
+        <img src="https://spoonacular.com/recipeImages/{{recipe['image']}}" onerror="this.onerror=null;this.src='https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png';" class='mb-3 recipes-img' alt='{{ recipe["title"] }}'>
+        <h5><a href="/recipe?id={{ recipe['id'] }}">{{ recipe['title'] }}</a></h5>
+        <p>Ready in {{ recipe['readyInMinutes'] }} minutes</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

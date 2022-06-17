@@ -1,0 +1,31 @@
+.recipes-img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.recipe-img {
+  width: 320px;
+  max-width: 100%;
+}
+
+.login-form,
+.register-form,
+.reset-form {
+  width: 500px;
+  max-width: 100%;
+}
+
+body {
+  background: url('https://c.pxhere.com/photos/24/01/carrots_food_fresh_freshness_harvest_healthy_herbs_ingredients-1561725.jpg!d') center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.container {
+  background: white;
+}
+
+.row {
+  margin: 0px!important;
+}

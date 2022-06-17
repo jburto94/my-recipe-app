@@ -1,0 +1,54 @@
+{% extends 'template.html' %}
+{% block title %} Search Recipes {% endblock %}
+{% block body %}
+
+<div class='py-5 container'>
+  <h2 class='mb-4 text-center'>It's time for cooking! What food are you interested in today?</h2>
+  <form action="/recipes" class='text-center'>
+    <div class="text-center mb-3">
+      <label for='quantity'>Choose how many recipes you'd like to show (1-100)</label>
+      <input type='number' id='quantity' name='quantity' min='1' max='100' value='30' width='70'>
+    </div>
+    <div class="input-group mb-3 mx-auto" style="max-width: 50%;">
+      <input type="text" class="form-control" placeholder="Pizza, sushi, casserole" aria-label="Recipes" aria-describedby="button-addon2" name="recipes">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+      </div>
+    </div>
+    <div class="text-center mb-3">
+      <h6>Dietary Restrictions</h6>
+      <div class="d-flex justify-content-center">
+        <div class="mr-3">
+          <input type="radio" id="none" name="diet" value="" checked>
+          <label for="none">None</label>
+        </div>
+        <div class="mr-3">
+          <input type="radio" id="pescetarian" name="diet" value="pescatarian">
+          <label for="pescetarian">Pescatarian</label>
+        </div>
+        <div class="mr-3">
+          <input type="radio" id="vegetarian" name="diet" value="vegetarian">
+          <label for="vegetarian">Vegetarian</label>
+        </div>
+        <div>
+          <input type="radio" id="vegan" name="diet" value="vegan">
+          <label for="vegan">Vegan</label>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="container">
+  <div class="row">
+    {% for recipe in recipes %}
+      <div class="col-md-4 mb-4">
+        <img src="{{recipe['image']}}" class='mb-3 recipes-img' alt='{{ recipe["title"] }}' onerror="this.onerror=null;this.src='https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png';">
+        <h5><a href="/recipe?id={{ recipe['id'] }}">{{ recipe['title'] }}</a></h5>
+        <p>Ready in {{ recipe['readyInMinutes'] }} minutes</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

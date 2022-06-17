@@ -1,0 +1,16 @@
+{% extends 'template.html' %}
+{% block title %} Saved Recipes {% endblock %}
+{% block body %}
+<div class="container">
+  <h2 class='text-center py-5'>Your Saved Recipes</h2>
+  <div class="row justify-content-center">
+    {% for recipe in recipes %}
+      <div class="col-md-4 mb-4">
+        <img src="{{ recipe['image'] }}" alt="{{ recipe['title'] }}" class='mr-3 mb-3 recipe-img' onerror="this.onerror=null;this.src='https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png';">
+        <h5><a href="/recipe?id={{ recipe['id'] }}">{{ recipe['title'] }}</a></h5>
+        <p>Ready in {{ recipe['readyInMinutes'] }} minutes</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
