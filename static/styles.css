@@ -29,3 +29,15 @@ body {
 .row {
   margin: 0px!important;
 }
+
+@media (min-width: 992px) {
+  .search-bar {
+    width: 50%;
+  }
+}
+
+@media (max-width: 540px) {
+  .search-bar {
+    width: 90%;
+  }
+}
